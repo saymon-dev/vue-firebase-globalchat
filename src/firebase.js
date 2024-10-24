@@ -4,13 +4,13 @@ import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDb7dFPWJ3WP4_9EpXKo_iuNkioEPwPBl8",
-  authDomain: "vue-chat-hyl.firebaseapp.com",
-  projectId: "vue-chat-hyl",
-  storageBucket: "vue-chat-hyl.appspot.com",
-  messagingSenderId: "1071544862283",
-  appId: "1:1071544862283:web:3394314381ab5a7811efce",
-  measurementId: "G-JWV7ZXRVBE"
+  apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
+  authDomain: process.env.VUE_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.VUE_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.VUE_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.VUE_APP_FIREBASE_APP_ID,
+  measurementId: process.env.VUE_APP_FIREBASE_MEASUREMENT_ID
 };
 
 // Inicializar Firebase

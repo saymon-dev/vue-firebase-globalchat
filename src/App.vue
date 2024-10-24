@@ -8,7 +8,9 @@
 
     <h1>Vue Chat + Firebase</h1>
 
-    <div v-if="user" class="user-info">
+    <!-- Bienvenida al usuario autenticado -->
+    <div v-if="user" id="welcomeMessage" class="user-info">
+      <img :src="user.photoURL" alt="User Avatar" class="user-avatar" />
       <p>Bienvenido, {{ user.displayName }}</p>
       <button @click="logout" class="logout-button">Cerrar sesión</button>
     </div>
@@ -87,10 +89,10 @@ export default {
 
 /* Estilo para el contenedor principal */
 #app {
-  text-align: center;
+  text-align: left;
   position: relative;
   z-index: 1;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: "Helvetica Neue", 'Times New Roman', Times, serif, sans-serif;
   color: black;
 }
 
@@ -120,7 +122,7 @@ export default {
 .login-button {
   padding: 10px 20px;
   background-color: #007bff;
-  color: white;
+  color: black;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -132,10 +134,36 @@ export default {
 .logout-button {
   padding: 10px 20px;
   background-color: #ffc107; /* Amarillo */
-  color: white;
+  color: black;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
+
+/* Estilo para welcomeMessage */
+#welcomeMessage {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre imagen y texto */
+  z-index: 1000;
+}
+
+/* Estilo para la imagen de perfil del usuario */
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
 </style>
+

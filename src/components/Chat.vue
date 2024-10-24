@@ -1,6 +1,6 @@
 <template>
   <div class="chat-container">
-    <h2>🟢 Chat Global ✉️</h2>
+    <h2 class="titulo_chat">🟢 Chat Global ✉️</h2>
     <div class="message-container" v-for="message in messages" :key="message.id">
       <img :src="message.photoURL" alt="User Avatar" class="user-avatar">
       <div class="message-content">
@@ -177,4 +177,9 @@ export default {
   cursor: pointer;
   margin-left: 10px;
 }
+
+.titulo_chat{
+  margin-bottom: 50px;
+}
+
 </style>

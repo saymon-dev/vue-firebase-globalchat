@@ -13,7 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+<<<<<<< HEAD
       - run: npm run build<<<<<<<<<<<<<<<<<<
+=======
+      - run: npm install  # <-- Instala las dependencias
+      - run: npm run build  # <-- Construye la aplicación
+>>>>>>> ba858dd21a15f7d49bdfe49ef22ff341b52b114e
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}

@@ -11,14 +11,7 @@ jobs:
     steps:
       # Paso 1: Clonar el repositorio
       - uses: actions/checkout@v4
-
-      # Paso 2: Instalar dependencias
-      - run: npm install
-
-      # Paso 3: Construir el proyecto (opcional, si usas un framework como Vue, React, etc.)
       - run: npm run build
-
-      # Paso 4: Desplegar en Firebase Hosting
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           firebaseToken: ${{ secrets.FIREBASE_TOKEN }}  # Usar el token guardado en los secretos de GitHub
